@@ -20,13 +20,12 @@ Engineers are assigned and engineer creates PR.
 
 When first created, the PR should:
 
+- have its branch named after its project in `camelCase`
 - have its name be the same name as the issue it addresses.
   - ex. `00001 ProjectName`
   - Note that `00001 === Issue Number` <-(Padded to 5 integers) & `ProjectName === Issue Name`
 - have 'closes: $issue' in its desccription.
   - ex. closes: #1
-
-
 
 ### **Step 3**
 
@@ -68,7 +67,7 @@ Estimations for the project and sub-projects should bbe formatted as such:
 > ```
 
 > ``` Javascript
-> Project Planning Outline <URL>: [Link To Project Planning File]()
+> Project Planning Outline <URL>: [Link To Project Planning Markdown File On PR Branch]()
 > ```
 
 ### **Step 5**
