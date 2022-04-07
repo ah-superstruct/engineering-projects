@@ -14,23 +14,18 @@ Product creates and issue in this repository. This issue should contain all nece
 
 Engineers are assigned and engineer creates PR.
 
->Note: ***This PR will not be closed until the issue it addresses is closed.***
+```Note: ***This PR will not be closed until the issue it addresses is closed.***```
 
 #### PR Structure
 
-- closes Product's issue.
+When first created, the PR should:
+
+- have its name be the same name as the issue it addresses.
+  - ex. `00001 ProjectName`
+  - Note that `00001 === Issue Number` <-(Padded to 5 integers) & `ProjectName === Issue Name`
+- have 'closes: $issue' in its desccription.
   - ex. closes: #1
-- Name of PR should be the same name as the issue it addresses.
 
-> #### `00001 ProjectName`
-
-Note:
-
-> ##### `00001 === Issue Number`
->
-> ##### ^ (Padded to 5 integers)
->
-> ##### `ProjectName === Issue Name`
 
 
 ### **Step 3**
@@ -56,15 +51,25 @@ Should the main project exceed ```60``` hours, sub-projects and their correspond
 
 Estimations for the project and sub-projects should bbe formatted as such:
 
-- > ```Project <STRING>: Project Name```
+> ``` Javascript
+> Project <STRING>: 'Project Name'
+> ```
 
-- > ```Hour Estimation <INT>: Number Of Hours Estimated To Deploy```
+> ``` Javascript
+> Hour Estimation <INT>: 0 - 60 'Number Of Hours Estimated To Deploy'
+> ```
 
-- > ```Optimal RTD <DATE>: Optimal Date To Deploy => MM/DD/YYYY```
+> ``` Javascript
+> Optimal RTD <DATE>: Optimal Date To Deploy => MM/DD/YYYY
+> ```
 
-- > ```Estimated RTD <DATE>: Date Ready To Deploy => MM/DD/YYYY```
+> ``` Javascript
+> Estimated RTD <DATE>: Date Ready To Deploy => MM/DD/YYYY
+> ```
 
-- > ```Project Planning Outline <URL>: Link To Project Planning File```
+> ``` Javascript
+> Project Planning Outline <URL>: [Link To Project Planning File]()
+> ```
 
 ### **Step 5**
 
