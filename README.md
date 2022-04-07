@@ -1,88 +1,85 @@
 # Engineering Projects Repository
 
-This repository functions as a main holding space for all projects in their creation and planning stages. 
+This repository functions as a main holding space for all projects's documentation in their creation and planning stages.
 
-### Repository Structure
+---
 
-This repositories structure is simple. We have a main folder that holds all planning markdown files. New projects are created in the form of new issues by Product. 
+## Workflow
 
-### Workflow
+### **Step 1**
 
-1. Product creates and issue in this repository. This issue should contain all necessary information needed to allow Engineering to estimate a deploy date and total project hours. 
-	a. Assigned engineer opens a PR that closes Product's issue.
-	b. Assigned engineer then creates a markdown file labeled the following way: 
+Product creates and issue in this repository. This issue should contain all necessary information needed to allow Engineering to estimate a deploy date and total project hours.
 
-``` JavaScript
-00001 ProjectName
+### **Step 2**
 
-Note: 
-00001 === Issue Number ('Padded to 5 integers')
-ProjectName === Issue Name
-```
+Engineers are assigned and engineer creates PR.
 
-2. Within this markdown sheet the assigned engineer will add the following:
+>Note: ***This PR will not be closed until the issue it addresses is closed.***
+
+#### PR Structure
+
+- closes Product's issue.
+  - ex. closes: #1
+- Name of PR should be the same name as the issue it addresses.
+
+> #### `00001 ProjectName`
+
+Note:
+
+> ##### `00001 === Issue Number`
+>
+> ##### ^ (Padded to 5 integers)
+>
+> ##### `ProjectName === Issue Name`
+
+
+### **Step 3**
+
+Assigned Engineer will proceed to document their plan to deploy the project in a series of commits.
+
+#### **Commit 1:** Create Planning Document Markdown Sheet
+
 - Link to main issue in Engineering Projects Repository
-- [Planning outline](README.md#planning-outline)
+  - ex. [Example Project](https://github.com/ah-superstruct/engineering-projects/issues/1)
 
-3. After the information is gathered for the [Planning outline](README.md#planning-outline), a commit should be pushed into the PR with the information formatted as so: 
+#### **Commit ```2 + n```:** Generate [Planning Outline](./planningOutline.md)
 
-``` Javascript
-Project <STRING>: Project Name
-Hour Estimation <INT>: Number Of Hours Estimated To Deploy
-Optimal RTD <DATE>: Optimal Date To Deploy => MM/DD/YYYY
-Estimated RTD <DATE>: Date Ready To Deploy => MM/DD/YYYY
-Project Planning Outline <URL>: Link To Project Planning File
-```
+- May take as many commits as needed to complete.
 
-4. The assigned engineer then reaches out to the Engineering Manager and asks for a greenlight to proceed.
+### **Step 4**
 
-5. Using the planning outline, the assigned engineer creates the neccessary issues in the respective repositories as necessitated by the project's scope. These issues will be the ones that the assigned engineer will be referenceing when working on the project itself. 
+The PR description is updated with estimations using the information gained from completing the [planning outline](./planningOutline.md).
 
-6. Push another commit to add in links to the issues created in the production repositories.
+***Important:***
 
-7. Continue working on the Project until all tickets and related issues are completed. Once this is done, the main issue that was opened in Engineering Projects Repository can be closed with the original PR made to hold the planning outline and estimation information. 
+Should the main project exceed ```60``` hours, sub-projects and their corresponding issues will be [created](README.md#step-7) and referenced in description as they are created and estimated.
 
-## Planning Outline
+Estimations for the project and sub-projects should bbe formatted as such:
 
-In order to facilitate proper forethought and planning in a project, a planning outline should contain the following, at a minimum:
+- > ```Project <STRING>: Project Name```
 
-#### What is the objective?
-- Why? 
-- Who is asking for this?
-- What happens if we don't do this? 
+- > ```Hour Estimation <INT>: Number Of Hours Estimated To Deploy```
 
-#### What is the current state of the system this project will affect? 
-- How does it work?
-- What is the system flow step by step?
+- > ```Optimal RTD <DATE>: Optimal Date To Deploy => MM/DD/YYYY```
 
-#### What are different ways to achieve the objective? 
-- Option 1
-	- What changes need to me made to: 
-		- Front End?
-		- Back End?
-		- User documentation?
-		- Business itself?
-- What are the advantages?
-	- How much code needs to be changed? 
-	- How quickly can this be done? 
-	- How many people need to be involved? 
-	- What are the operational changes? (database, hosting, etc)
-- What are the risks? 
-	- Can this be reversed? 
-	- What kind of maintenance is involved? 
-	- Would a new developer or user be able to understand this? 
-	- Will this cause technical debt?
-- Option 2
-- Option 3
+- > ```Estimated RTD <DATE>: Date Ready To Deploy => MM/DD/YYYY```
 
-#### What is the recommendation moving forward? 
-- Which option is best? 
-- Why? 
-	- Which advantages are most important?
-	- Which drawbacks are acceptable?
-- What are the next steps?
-	- What tickets need to be created? 
-	- How many hours will each ticket take?
-	- What is the estimated date to deployment of the project?
+- > ```Project Planning Outline <URL>: Link To Project Planning File```
 
-## Project Division
+### **Step 5**
+
+The assigned engineer then reaches out to the Engineering Manager and asks for the green-light to proceed.
+
+### **Step 6**
+
+Upon getting the green-light, the engineer posts their estimations in #engineering-projects
+
+#### **Step 7**
+
+Using the [planning outline](./planningOutline.md), the assigned engineer creates the necessary issues in the respective repositories as necessitated by the project's scope. These issues will be the ones that the assigned engineer will be working on closing when working on the project itself. 
+
+> As these issues are created, they should be referenced and linked in the PR's description.
+
+#### **Step 8**
+
+Engineers continue work on the Project until all tickets and related issues are completed. Once everything is deployed, the main issue that was opened in Engineering Projects Repository will be closed by using the original PR made to hold the planning outline and estimation information.
